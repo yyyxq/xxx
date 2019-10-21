@@ -1,0 +1,19 @@
+command = input("请输入命令：")
+commandpalist = command.split(' ')
+path = commandpalist[2].replace('\\','\\')
+with open(path) as f:
+	a = f.read()
+#字符
+n = a.replace(' ','')
+characternumber = len(n)
+#单词
+k = a.replace(',',' ').replace('.',' ')
+wordnumber = len(k.split(' '))-1
+#句子
+sentencenumber = len(a.split('.'))-1
+if commandpalist[1] == '-c':
+    print(characternumber)
+if commandpalist[1] == '-w':
+    print(wordnumber)
+if commandpalist[1] == '-s':
+    print(sentencenumber)
